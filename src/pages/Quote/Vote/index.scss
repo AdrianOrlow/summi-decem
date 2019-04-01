@@ -1,0 +1,14 @@
+.quote__vote {
+  background: #1c2a39;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 9rem;
+}
+
+.quote__vote svg {
+  cursor: pointer;
+  &:hover path {
+    fill: #f1c40f;
+  }
+}

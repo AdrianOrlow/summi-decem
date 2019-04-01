@@ -1,0 +1,22 @@
+.app {
+  background: #2c3a49;
+  color: #ecf0f1;
+  height: 100%;
+  font-family: Poppins;
+}
+
+.app > a {
+  text-decoration: none;
+  color: #ecf0f1;
+  &:visited {
+    color: #ecf0f1;
+  }
+  & > h1 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    font-size: 3rem;
+  }
+}

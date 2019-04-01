@@ -1,0 +1,45 @@
+ .btn--rq {
+  display: flex;
+}
+
+.btn--rq__el {
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn--rq__title {
+  background: #ecf0f1;
+  color: #2c3a49;
+  width: auto;
+  transition: width .2s ease-in-out; 
+  & > div {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    fill: #2c3a49;
+    height: 1.25rem;
+    margin-right: 0.5em;
+    &.loading {
+      height: 2rem;
+      margin: 0;
+    }
+  }
+  &:hover {
+    background: #ededed;
+  }
+  &:active {
+    background: #e0e0e0;
+  }
+}
+
+.btn--rq__select {
+  border: 0;
+  background: #1c2a39;
+  color: #ecf0f1;
+}

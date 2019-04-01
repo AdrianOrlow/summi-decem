@@ -1,0 +1,25 @@
+.quote__source {
+  display: flex;
+  .source__el {
+    padding: 1rem;
+    padding-left: 0;
+    font-weight: 600;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  .source__title {
+    color: #ecf0f1;
+  }
+  .source__link {
+    padding: 1rem;
+    background: #1c2a39;
+    color: #ecf0f1;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+    &:hover {
+      background: #15202b;
+    }
+  }
+}
