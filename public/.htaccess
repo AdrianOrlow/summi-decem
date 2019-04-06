@@ -1,5 +1,10 @@
 RewriteEngine On 
 
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+RewriteRule ^ /index.html [L]
+
 RewriteRule ^api/quote/$ api/quote.php
 RewriteRule ^api/quote/([0-9]+)$ api/quote.php?quote_id=$1
 RewriteRule ^api/quotes/([0-9]+)$ api/quotes.php?person_id=$1
