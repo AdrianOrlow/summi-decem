@@ -1,20 +1,18 @@
 Options -Indexes
 RewriteEngine On 
 
-# Forward to HTTPS
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP_HOST} example\.com [NC]
-RewriteRule ^ https://example.com%{REQUEST_URI} [R,L]
-RewriteCond %{HTTP_HOST} ^www\.example\.com [NC]
-RewriteRule ^ https://example.com%{REQUEST_URI} [R,L]
-
-# Forward to React
-RewriteBase /
-RewriteCond %{REQUEST_URI} !^/(api)(/|$)
-RewriteRule ^(.*)$ / [L,QSA]
-
 # API Endpoints
 RewriteRule ^api/quote/$ api/quote.php
 RewriteRule ^api/quote/([0-9]+)$ api/quote.php?quote_id=$1
 RewriteRule ^api/quotes/([0-9]+)$ api/quotes.php?person_id=$1
 RewriteRule ^api/quotes/ api/quotes.php
+
+# Exclude API directory
+RewriteRule ^(api)($|/) - [L]
+
+# Forward to React
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
