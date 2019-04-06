@@ -1,0 +1,6 @@
+RewriteEngine On 
+
+RewriteRule ^api/quote/$ api/quote.php
+RewriteRule ^api/quote/([0-9]+)$ api/quote.php?quote_id=$1
+RewriteRule ^api/quotes/([0-9]+)$ api/quotes.php?person_id=$1
+RewriteRule ^api/quotes/ api/quotes.php
