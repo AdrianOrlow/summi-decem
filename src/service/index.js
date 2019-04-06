@@ -1,5 +1,5 @@
 import fetch from 'node-fetch'
-const APIDir = 'http://localhost/api'
+const APIDir = 'https://summi-decem.herokuapp.com/api'
 
 const API = {
   getQuotesIDsByPID: (pid) => {
