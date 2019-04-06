@@ -16,3 +16,9 @@
   padding: 0 2rem;
   margin-bottom: 7.5vh;
 }
+
+@media only screen and (max-width: 425px) {
+  .home__info {
+    font-size: 1.25rem;
+  }
+}

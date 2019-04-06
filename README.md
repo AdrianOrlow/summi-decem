@@ -1,68 +1,122 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Summi Decem
 
-## Available Scripts
+### App for display of programmers quotations
+Name of the project derives from the language of Latin and the phrase "Summi Decem" means "top ten". Ten, because there are quotes by 10 authors.
 
-In the project directory, you can run:
+Project demo is available at: http://bit.ly/summi-decem
 
-### `npm start`
+# Getting started
+Firstly, install dependencies:
+```bash
+> npm install
+```
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Then, in the project directory, you can run:
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+```bash
+# To run the app in the dev mode
+> npm start
 
-### `npm test`
+# To build the app
+> npm run build
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# API Endpoints
+##### _summi-decem.herokuapp.com/api/_
+---
+#### **Show all quotes**
+Returns json data about all quotes in database.
 
-### `npm run build`
+* **URL**
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  /quotes/
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* **Method:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+  `GET`
 
-### `npm run eject`
+* **Success Response:**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  * **Code:** 200 <br />
+    **Content:** `{"quotes": [{ "id": "49", "person_id": "10" }, ...] }`
+ 
+* **Error Response:**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  * **Code:** 404 NOT FOUND
+---
+#### **Show quotes by author**
+Returns json data about author's quotes.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* **URL**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  /quotes/:pid
 
-## Learn More
+* **Method:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  `GET`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+*  **URL Params**
 
-### Code Splitting
+   **Required:**
+ 
+   `pid=[integer]`
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* **Success Response:**
 
-### Analyzing the Bundle Size
+  * **Code:** 200 <br />
+    **Content:** `{"quotes": [{ "id": "49", "person_id": "10" }, ...] }`
+ 
+* **Error Response:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+  * **Code:** 404 NOT FOUND
+---
+#### **Show quote**
+Returns json data about a single quote.
 
-### Making a Progressive Web App
+* **URL**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+  /quote/:id
 
-### Advanced Configuration
+* **Method:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+  `GET`
 
-### Deployment
+*  **URL Params**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+   **Required:**
+ 
+   `id=[integer]`
 
-### `npm run build` fails to minify
+* **Success Response:**
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+  * **Code:** 200 <br />
+    **Content:** `{"id": 20, "text": "...", "author": "Linus Torvalds", "source": "...", "created_on": "2019-04-05 12:12:12"}`
+ 
+* **Error Response:**
+
+  * **Code:** 404 NOT FOUND
+---
+#### **Propose quote**
+Adds new proposed quote
+
+* **URL**
+
+  /quote/
+
+* **Method:**
+
+  `POST`
+
+*  **Body:**
+```json
+{
+	"person_id": 7,
+	"source": "https://google.com/",
+	"text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+}
+```
+
+* **Success Response:**
+  * **Code:** 200 <br />
+* **Error Response:**
+  * **Code:** 404 NOT FOUND

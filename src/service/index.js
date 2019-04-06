@@ -12,6 +12,14 @@ const API = {
     return fetch(`${APIDir}/quote/${qid}`)
       .then(res => res.json())
       .catch(error => console.error(error))
+  },
+  postProposedQuote: (data) => {
+    return fetch(`${APIDir}/quote/`, {
+      method: 'post',
+      body: JSON.stringify(data)
+    })
+      .then(res => res.ok)
+      .catch(error => console.error(error))
   }
 }
 

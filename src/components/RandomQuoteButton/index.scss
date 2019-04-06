@@ -43,3 +43,9 @@
   background: #1c2a39;
   color: #ecf0f1;
 }
+
+@media only screen and (max-width: 425px) {
+  .btn--rq__el {
+    font-size: 1rem;
+  }
+}

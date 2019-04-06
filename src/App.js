@@ -13,12 +13,13 @@ const App = () => {
     <Router history={history}>
       <div className='app'>
         <Link to='/'>
-          <h1>KONFEDERACI</h1>
+          <h1>SUMMI DECEM</h1>
         </Link>
 
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/quote/:pid/:qid' component={Quote} />
+          <Route path='/404' component={NotFound} />
           <Route component={NotFound} />
         </Switch>
       </div>

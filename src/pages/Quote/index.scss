@@ -9,6 +9,11 @@
 }
 
 .quote__content {
+  width: 100%;
+  max-width: 64rem;
+}
+
+.quote__text {
   line-height: 1.5;
   font-weight: 600;
   font-size: 2rem;
@@ -63,7 +68,7 @@
   .quote__source {
     margin-top: 1rem;
     .source__link {
-      width: calc(100% - 12rem);
+      width: 100%;
       justify-content: center;
     }
   }

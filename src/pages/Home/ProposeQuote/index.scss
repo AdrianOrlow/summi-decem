@@ -1,0 +1,120 @@
+.pquote {
+  max-width: 64rem;
+  width: 100%;
+  margin-top: 7.5vh;
+}
+
+.pquote__top {
+  display: flex;
+  justify-content: space-between;
+  .top__title {
+    background: #ecf0f1;
+    color: #2c3a49;
+    width: 100%;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+  }
+  .top__select {
+    border: 0;
+    background: #1c2a39;
+    color: #ecf0f1;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+.pquote__text {
+  height: 14vh;
+  background: #fafafa;
+  textarea {
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    max-width: calc(100% - 2rem);
+    min-width: calc(100% - 2rem);
+    min-height: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+    resize: none;
+    margin: 0px;
+    border: 0;
+    padding: 1rem;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: #2c3a49;
+  }
+}
+
+.pquote__bottom {
+  display: flex;
+  justify-content: flex-end;
+  .bottom__button {
+    border: 0;
+    background: #1c2a39;
+    color: #ecf0f1;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    svg {
+      height: 1.5rem;
+    }
+  }
+}
+
+.pquote__source {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  .source__icon {
+    height: 1rem;
+    width: 1rem;
+    padding: 1rem;
+    background: #1c2a39;
+  }
+  .source__input {
+    border: 0;
+    width: 100%;
+    background: #ecf0f1;
+    text-align: center;
+    color: #2c3a49;
+  }
+}
+
+.bottom__info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  font-weight: 600;
+  opacity: 0;
+  visibility: none;
+  transition: visibility 0s, opacity 0.2s ease-in-out;
+  &--red {
+    background: #f03434;
+    color: #fafafa;
+  }
+  &--green {
+    background: #00b16a;
+    color: #fafafa;
+  }
+  &--showed {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .pquote * {
+    font-size: 1rem !important;
+  }
+}

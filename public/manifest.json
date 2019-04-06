@@ -1,6 +1,6 @@
 {
-  "short_name": "Konfederaci",
-  "name": "Konfederaci - cytaty i informacje",
+  "short_name": "Summi Decem",
+  "name": "Summi Decem - cytaty dziesięciu najlepszych",
   "icons": [
     {
       "src": "favicon.ico",
@@ -10,6 +10,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#2c3a49",
   "background_color": "#ffffff"
 }

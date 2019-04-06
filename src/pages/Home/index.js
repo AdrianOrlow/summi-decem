@@ -1,12 +1,15 @@
 import React from 'react'
-import RandomQuoteButton from '../../components/RandomQuoteButton'
 import './index.scss'
+import ProposeQuote from './ProposeQuote'
+
+import RandomQuoteButton from '../../components/RandomQuoteButton'
 
 const Home = () => {
   return (
     <div className='home'>
-      <p className='home__info'>Każdy wyborca powinien mieć pewność na kogo głosuje. W tym celu powstali Konfederaci – aplikacja pozwalająca na głębsze zapoznanie się z poglądami liderów Konfederacji. Kliknij przycisk poniżej, aby wejść w ich świat.</p>
-      <RandomQuoteButton title='Losuj cytat' />
+      <p className='home__info'>Najciekawsze cytaty dziesięciu (subiektywnie) najlepszych programistów w historii. Zarówno po angielsku jak i polsku, aby zachować pełną ich wartość. Kliknij przycisk poniżej, aby je poznać. Możesz też zaproponować własne.</p>
+      <RandomQuoteButton title='Losuj cytat' defaultPersonID={''} />
+      <ProposeQuote />
     </div>
   )
 }

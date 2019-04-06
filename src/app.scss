@@ -1,4 +1,4 @@
-.app {
+body {
   background: #2c3a49;
   color: #ecf0f1;
   height: 100%;
@@ -18,5 +18,11 @@
     justify-content: center;
     height: 15vh;
     font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .app > a > h1 {
+    font-size: 2.5rem;
   }
 }
